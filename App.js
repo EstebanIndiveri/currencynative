@@ -26,7 +26,8 @@ const styles=StyleSheet.create({
     height:200,
     borderBottomLeftRadius:30,
     borderBottomRightRadius:30,
-    opacity:.6
+    opacity:.6,
+    elevation:3
   },
 })
  
