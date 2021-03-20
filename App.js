@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+import globalStlyles from './src/utils/colors'; 
 import { StyleSheet,View,Text,SafeAreaView } from 'react-native'
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
 
 const styles=StyleSheet.create({
   safeArea:{
-    backgroundColor:'#f00',
+    backgroundColor:globalStlyles.PRIMARY_COLOR,
     height:200,
     borderBottomLeftRadius:30,
     borderBottomRightRadius:30,
