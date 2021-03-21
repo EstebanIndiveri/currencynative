@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import globalStlyles from './src/utils/colors'; 
-import { StyleSheet,View,Text,SafeAreaView } from 'react-native'
+import { StyleSheet,View,Text,SafeAreaView,StatusBar } from 'react-native'
 
 const App = () => {
   return ( 
     <Fragment>
+      <StatusBar barStyle="light-content" backgroundColor={globalStlyles.PIMARY_COLOR_DARK}/>
       <SafeAreaView style={styles.safeArea}>
-        <Text>Form</Text>
+        <Text>Formulario HEAD</Text>
       </SafeAreaView>
 
       <View>
@@ -26,8 +27,7 @@ const styles=StyleSheet.create({
     height:200,
     borderBottomLeftRadius:30,
     borderBottomRightRadius:30,
-    opacity:.6,
-    elevation:3
+    alignItems:'center'
   },
 })
  
