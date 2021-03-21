@@ -1,23 +1,31 @@
 import React, { Fragment } from 'react';
 import globalStlyles from './src/utils/colors'; 
 import { StyleSheet,View,Text,SafeAreaView,StatusBar } from 'react-native'
+import Form from './src/components/Form';
 
 const App = () => {
   return ( 
     <Fragment>
-      <StatusBar barStyle="light-content" backgroundColor={globalStlyles.PIMARY_COLOR_DARK}/>
-      <SafeAreaView style={styles.safeArea}>
-        <Text>Formulario HEAD</Text>
+      <StatusBar barStyle="light-content" backgroundColor={globalStlyles.PRIMARY_COLOR}/>
+      <SafeAreaView style={{flex:1, backgroundColor:"#FFF"}}>
+        <View style={styles.safeArea}>
+          <Text style={styles.titleApp}>Cotizador de Prestamos</Text>
+          <Form/>
+        </View>
+
+      <View>
+        <Text>Resultado</Text>
+      </View>
+
+
+      <View>
+        <Text>Footer</Text>
+      </View>
+
+
       </SafeAreaView>
-
-      <View>
-        <Text>Result</Text>
-      </View>
-
-      <View>
-        <Text>footer</Text>
-      </View>
     </Fragment>
+    
    );
 }
 
@@ -28,6 +36,12 @@ const styles=StyleSheet.create({
     borderBottomLeftRadius:30,
     borderBottomRightRadius:30,
     alignItems:'center'
+  },
+  titleApp:{
+    fontSize:25,
+    fontWeight:'bold',
+    color:'#FFF',
+    marginTop:15,
   },
 })
  
