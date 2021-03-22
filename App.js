@@ -43,6 +43,9 @@ const styles=StyleSheet.create({
     color:'#FFF',
     marginTop:15,
   },
+  result:{
+    
+  }
 })
  
 export default App;
