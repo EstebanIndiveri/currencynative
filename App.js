@@ -21,6 +21,11 @@ const App = () => {
 
       <View>
         <Text>Footer</Text>
+        <View>
+          <Text>Some text</Text>
+          <Text>Some text</Text>
+
+        </View>
       </View>
 
 
