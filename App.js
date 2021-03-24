@@ -15,6 +15,7 @@ const App = () => {
 
       <View>
         <Text>Resultado</Text>
+        <Text>$0.00</Text>
       </View>
 
 
