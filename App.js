@@ -12,7 +12,7 @@ const App = () => {
           <Text style={styles.titleApp}>Cotizador de Prestamos</Text>
           <Form/>
         </View>
-
+{/* 
       <View>
         <Text>Resultado</Text>
         <Text>$0.00</Text>
@@ -26,7 +26,7 @@ const App = () => {
           <Text>Some text</Text>
 
         </View>
-      </View>
+      </View> */}
 
 
       </SafeAreaView>

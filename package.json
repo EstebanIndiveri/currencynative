@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@gregfrench/react-native-wheel-picker": "^1.2.12",
+    "@react-native-community/picker": "^1.8.1",
+    "@react-native-picker/picker": "^1.12.0",
     "react": "17.0.1",
     "react-native": "0.64.0"
   },
