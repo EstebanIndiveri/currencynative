@@ -39,6 +39,7 @@ const [selectedLanguage, setSelectedLanguage] = useState();
   <Picker.Item label="6 meses" value="6" />
   <Picker.Item label="12 meses" value="12" />
   <Picker.Item label="24 meses" value="24" />
+  <Picker.Item label="48 meses" value="48" />
 
 
 </Picker>
