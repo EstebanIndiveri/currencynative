@@ -1,14 +1,14 @@
 import React,{useState} from 'react';
 // import RNPickerSelect from 'react-native-picker-select';
-import Picker from '@gregfrench/react-native-wheel-picker'
+// import Picker from '@gregfrench/react-native-wheel-picker'
+import {Picker} from '@react-native-picker/picker'
 var PickerItem = Picker.Item;
 
 
 import { View,Text,StyleSheet,TextInput } from 'react-native';
 import globalStyles from '../utils/colors';
 const Form = () => {
-    const [selectedItem, setSelectedItem ] = useState(2);
-  const [itemList , setItemList ] = useState(['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']);
+const [selectedLanguage, setSelectedLanguage] = useState();
     return ( 
         <>
         <View style={styles.viewForm}>
@@ -27,17 +27,15 @@ const Form = () => {
             </View>
            <View>
            <Text>
-        <Picker style={{width: 200, height: 100}}
-          lineColor="#000000" //to set top and bottom line color (Without gradients)
-          lineGradientColorFrom="#008000" //to set top and bottom starting gradient line color
-          lineGradientColorTo="#FF5733" //to set top and bottom ending gradient
-          selectedValue={selectedItem}
-          itemStyle={{color:"#FFF", fontSize:26}}
-          onValueChange={(index) => setSelectedItem(index) }>
-          {itemList.map((value, i) => (
-            <PickerItem label={value} value={i} key={i}/>
-          ))}
-        </Picker>
+           <Picker
+           style={{width:300,height:50,backgroundColor:'white',color:'#FFF'}}
+  selectedValue={selectedLanguage}
+  onValueChange={(itemValue, itemIndex) =>
+    setSelectedLanguage(itemValue)
+  }>
+  <Picker.Item label="Java" value="java" />
+  <Picker.Item label="JavaScript" value="js" />
+</Picker>
       </Text>
            </View>
         </View>
@@ -49,7 +47,7 @@ const Form = () => {
 const styles=StyleSheet.create({
     viewForm:{
         position:'absolute',
-        bottom:-90,
+        bottom:0,
         width:"85%",
         paddingHorizontal:50,
         backgroundColor:globalStyles.PIMARY_COLOR_DARK,
@@ -102,6 +100,7 @@ const pickerSelectStyles=StyleSheet.create({
         borderRadius:8,
         color:'black',
         paddingRight:30,
+        backgroundColor:"#FFF"
     }
 })
  

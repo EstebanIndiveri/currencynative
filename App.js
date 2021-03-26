@@ -9,10 +9,11 @@ const App = () => {
       <StatusBar barStyle="light-content" backgroundColor={globalStlyles.PRIMARY_COLOR}/>
       <SafeAreaView style={{flex:1, backgroundColor:"#FFF"}}>
         <View style={styles.safeArea}>
+          <View style={styles.background}/>
           <Text style={styles.titleApp}>Cotizador de Prestamos</Text>
           <Form/>
         </View>
-{/* 
+
       <View>
         <Text>Resultado</Text>
         <Text>$0.00</Text>
@@ -26,7 +27,7 @@ const App = () => {
           <Text>Some text</Text>
 
         </View>
-      </View> */}
+      </View>
 
 
       </SafeAreaView>
@@ -37,10 +38,9 @@ const App = () => {
 
 const styles=StyleSheet.create({
   safeArea:{
-    backgroundColor:globalStlyles.PRIMARY_COLOR,
-    height:200,
-    borderBottomLeftRadius:30,
-    borderBottomRightRadius:30,
+    // backgroundColor:globalStlyles.PRIMARY_COLOR,
+    height:290,
+
     alignItems:'center'
   },
   titleApp:{
@@ -48,6 +48,15 @@ const styles=StyleSheet.create({
     fontWeight:'bold',
     color:'#FFF',
     marginTop:15,
+  },
+  background:{
+    backgroundColor:globalStlyles.PRIMARY_COLOR,
+    height:200,
+    width:'100%',
+    borderBottomLeftRadius:30,
+    borderBottomRightRadius:30,
+    position:'absolute',
+    zIndex:-1
   },
   result:{
     

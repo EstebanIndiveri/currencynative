@@ -12,6 +12,8 @@ target 'cotizadorprestamos' do
     :hermes_enabled => false
   )
 
+  pod 'RNCPicker', :path => '../node_modules/@react-native-picker/picker'
+
   target 'cotizadorprestamosTests' do
     inherit! :complete
     # Pods for testing
