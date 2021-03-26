@@ -31,10 +31,16 @@ const [selectedLanguage, setSelectedLanguage] = useState();
            style={{width:300,height:50,backgroundColor:'white',color:'#FFF'}}
   selectedValue={selectedLanguage}
   onValueChange={(itemValue, itemIndex) =>
-    setSelectedLanguage(itemValue)
+    {setSelectedLanguage(itemValue)
+    console.log(itemValue)
+    }
   }>
-  <Picker.Item label="Java" value="java" />
-  <Picker.Item label="JavaScript" value="js" />
+  <Picker.Item label="3 meses" value="3" />
+  <Picker.Item label="6 meses" value="6" />
+  <Picker.Item label="12 meses" value="12" />
+  <Picker.Item label="24 meses" value="24" />
+
+
 </Picker>
       </Text>
            </View>
