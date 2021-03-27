@@ -1,9 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useState } from 'react';
 import globalStlyles from './src/utils/colors'; 
-import { StyleSheet,View,Text,SafeAreaView,StatusBar } from 'react-native'
+import { StyleSheet,View,Text,SafeAreaView,StatusBar,Button } from 'react-native'
 import Form from './src/components/Form';
 
 const App = () => {
+  const [capital, setCapital] = useState(null);
+  const [interest,setInterest]=useState(null);
+  const [months, setMonths] = useState(null);
+  const onSubmit=()=>{
+    console.log('Capital:', capital)
+    console.log('Interest:', interest)
+    console.log('Months:', months)
+
+  }
   return ( 
     <Fragment>
       <StatusBar barStyle="light-content" backgroundColor={globalStlyles.PRIMARY_COLOR}/>
@@ -11,7 +20,11 @@ const App = () => {
         <View style={styles.safeArea}>
           <View style={styles.background}/>
           <Text style={styles.titleApp}>Cotizador de Prestamos</Text>
-          <Form/>
+          <Form 
+          setCapital={setCapital} 
+          setInterest={setInterest} 
+          setMonths={setMonths}
+          />
         </View>
 
       <View>
@@ -21,12 +34,12 @@ const App = () => {
 
 
       <View>
+        <Button
+        title="Enviar"
+        onPress={onsubmit}
+        />
         <Text>Footer</Text>
-        <View>
-          <Text>Some text</Text>
-          <Text>Some text</Text>
-
-        </View>
+       
       </View>
 
 

@@ -7,7 +7,7 @@ var PickerItem = Picker.Item;
 
 import { View,Text,StyleSheet,TextInput } from 'react-native';
 import globalStyles from '../utils/colors';
-const Form = () => {
+const Form = ({setCapital,setInterest,setMonths}) => {
 const [selectedLanguage, setSelectedLanguage] = useState();
     return ( 
         <>
