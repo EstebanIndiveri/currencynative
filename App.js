@@ -11,6 +11,7 @@ const App = () => {
     console.log('Capital:', capital)
     console.log('Interest:', interest)
     console.log('Months:', months)
+    console.log('approved')
 
   }
   return ( 
