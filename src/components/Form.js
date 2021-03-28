@@ -17,11 +17,13 @@ const [selectedLanguage, setSelectedLanguage] = useState();
                 placeholder='Cantidad a pedir'
                 keyboardType='numeric'
                 style={styles.input}
+                onChange={e=>setCapital(e.nativeEvent.text)}
                 />
                  <TextInput
                 placeholder='Interes %'
                 keyboardType='numeric'
                 style={[styles.input,styles.inputPercentage]}
+                onChange={e=>setInterest(e.nativeEvent.text)}
                 />
             
             </View>
@@ -32,7 +34,7 @@ const [selectedLanguage, setSelectedLanguage] = useState();
   selectedValue={selectedLanguage}
   onValueChange={(itemValue, itemIndex) =>
     {setSelectedLanguage(itemValue)
-    console.log(itemValue)
+    setMonths(itemValue)
     }
   }>
   <Picker.Item label="3 meses" value="3" />

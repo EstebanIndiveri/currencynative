@@ -2,16 +2,16 @@ import React, { Fragment,useState } from 'react';
 import globalStlyles from './src/utils/colors'; 
 import { StyleSheet,View,Text,SafeAreaView,StatusBar,Button } from 'react-native'
 import Form from './src/components/Form';
+import Footer from './src/components/Footer';
 
 const App = () => {
   const [capital, setCapital] = useState(null);
   const [interest,setInterest]=useState(null);
   const [months, setMonths] = useState(null);
-  const onSubmit=()=>{
+  const calculate=()=>{
     console.log('Capital:', capital)
     console.log('Interest:', interest)
     console.log('Months:', months)
-    console.log('approved')
 
   }
   return ( 
@@ -33,16 +33,7 @@ const App = () => {
         <Text>$0.00</Text>
       </View>
 
-
-      <View>
-        <Button
-        title="Enviar"
-        onPress={onsubmit}
-        />
-        <Text>Footer</Text>
-       
-      </View>
-
+      <Footer calculate={calculate}/>
 
       </SafeAreaView>
     </Fragment>
