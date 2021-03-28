@@ -8,10 +8,22 @@ const App = () => {
   const [capital, setCapital] = useState(null);
   const [interest,setInterest]=useState(null);
   const [months, setMonths] = useState(null);
+  const [total, setTotal] = useState(null);
   const calculate=()=>{
-    console.log('Capital:', capital)
-    console.log('Interest:', interest)
-    console.log('Months:', months)
+      if(!capital){
+        console.log('añade la cantidad a solicitar')
+      }else if(!interest){
+        console.log('añade el interes del prestamo')
+      }else if (!months){
+        console.log('selecciona los meses a pagar')
+      }else{
+        const i =interest/100;
+        const fee=capital/((1-Math.pow(i+1-months))/i);
+        setTotal({
+          monthlyFree:fee.toFixed(2).replace('.',','),
+          totalPayable:(fee*months).toFixed(2).replace('.',',')
+        })
+      }
 
   }
   return ( 
