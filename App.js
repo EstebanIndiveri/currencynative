@@ -15,7 +15,7 @@ const App = () => {
       }else if(!interest){
         console.log('añade el interes del prestamo')
       }else if (!months){
-        console.log('selecciona los meses a pagar')
+        console.log('selecciona los meses a pagar',months)
       }else{
         const i =interest/100;
         const fee=capital/((1-Math.pow(i+1-months))/i);
