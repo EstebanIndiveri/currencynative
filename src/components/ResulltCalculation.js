@@ -6,7 +6,15 @@ export default function ResulltCalculation(props) {
     return (
         <View style={styles.content}>
             {total && (
-                <Text>Result total: </Text>
+                <View style={styles.boxresult}>
+                    <Text style={styles.title}>Resumen:</Text>
+                    {/* <View style={styles.valuer}>
+                        <Text>Cantidad solicitada:</Text>
+                        <Text>{capital}</Text>
+                    </View> */}
+                    <DataResult title={'cantidad solicitada'} value={capital}
+                    />
+                </View>
             )}
             <View>
                 <Text style={styles.error}>{errorMessage}</Text>
@@ -14,10 +22,17 @@ export default function ResulltCalculation(props) {
         </View>
     )
 }
-
+function DataResult(props){
+    const{title,value}=props;
+    return (
+        <View style={styles.valuer}>
+        <Text>{title}</Text>
+        <Text>{value}</Text>
+    </View>
+    )
+}
 const styles = StyleSheet.create({
     content:{
-        marginTop:100,
         marginHorizontal:40,
     },
     error:{
@@ -25,5 +40,19 @@ const styles = StyleSheet.create({
         color:'#F00',
         fontWeight:'bold',
         fontSize:20,
+    },
+    boxresult:{
+        padding:30,
+    },
+    title:{
+        fontSize:30,
+        textAlign:'center',
+        fontWeight:'bold',
+        marginBottom:30,
+    },
+    valuer:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginBottom:20
     }
 })

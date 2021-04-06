@@ -48,7 +48,12 @@ const App = () => {
           />
         </View>
 
-      <ResulltCalculation  errorMessage={errorMessage}/>
+      <ResulltCalculation  errorMessage={errorMessage} 
+      capital={capital}
+      interest={interest}
+      months={months}
+      total={total}
+      />
 
       <Footer calculate={calculate}/>
 
