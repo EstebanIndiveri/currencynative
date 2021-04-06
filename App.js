@@ -3,19 +3,22 @@ import globalStlyles from './src/utils/colors';
 import { StyleSheet,View,Text,SafeAreaView,StatusBar,Button } from 'react-native'
 import Form from './src/components/Form';
 import Footer from './src/components/Footer';
+import ResulltCalculation from './src/components/ResulltCalculation';
 
 const App = () => {
   const [capital, setCapital] = useState(null);
   const [interest,setInterest]=useState(null);
   const [months, setMonths] = useState(null);
   const [total, setTotal] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('')
   const calculate=()=>{
+    reset();
       if(!capital){
-        console.log('añade la cantidad a solicitar')
+        setErrorMessage('añade la cantidad a solicitar')
       }else if(!interest){
-        console.log('añade el interes del prestamo')
+        setErrorMessage('añade el interes del prestamo')
       }else if (!months){
-        console.log('selecciona los meses a pagar',months)
+        setErrorMessage('selecciona los meses a pagar',months)
       }else{
         const i =interest/100;
         const fee=capital/((1-Math.pow(i+1-months))/i);
@@ -26,6 +29,11 @@ const App = () => {
       }
 
   }
+  const reset=()=>{
+    setErrorMessage('');
+    setTotal(null);
+  }
+  
   return ( 
     <Fragment>
       <StatusBar barStyle="light-content" backgroundColor={globalStlyles.PRIMARY_COLOR}/>
@@ -40,10 +48,7 @@ const App = () => {
           />
         </View>
 
-      <View>
-        <Text>Resultado</Text>
-        <Text>$0.00</Text>
-      </View>
+      <ResulltCalculation  errorMessage={errorMessage}/>
 
       <Footer calculate={calculate}/>
 
