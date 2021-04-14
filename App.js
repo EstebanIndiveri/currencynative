@@ -1,4 +1,4 @@
-import React, { Fragment,useState } from 'react';
+import React, { Fragment,useState,useEffect} from 'react';
 import globalStlyles from './src/utils/colors'; 
 import { StyleSheet,View,Text,SafeAreaView,StatusBar,Button } from 'react-native'
 import Form from './src/components/Form';
@@ -11,6 +11,13 @@ const App = () => {
   const [months, setMonths] = useState(null);
   const [total, setTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState('')
+
+  useEffect(()=>{
+    if(capital&&interest&&months){
+      calculate()
+    }
+  },[capital,interest,months])
+
   const calculate=()=>{
     reset();
       if(!capital){
@@ -20,8 +27,10 @@ const App = () => {
       }else if (!months){
         setErrorMessage('selecciona los meses a pagar',months)
       }else{
-        const i =interest/100;
-        const fee=capital/((1-Math.pow(i+1-months))/i);
+      const i = interest / 100;
+      const fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
+        // console.log(fee.toFixed(2).replace('.',','))
+        
         setTotal({
           monthlyFree:fee.toFixed(2).replace('.',','),
           totalPayable:(fee*months).toFixed(2).replace('.',',')
