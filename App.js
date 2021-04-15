@@ -15,6 +15,8 @@ const App = () => {
   useEffect(()=>{
     if(capital&&interest&&months){
       calculate()
+    }else{
+      reset();
     }
   },[capital,interest,months])
 
